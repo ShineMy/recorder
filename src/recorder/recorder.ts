@@ -247,7 +247,7 @@ export default class Recorder {
         this.context = new (window.AudioContext || window.webkitAudioContext)();
 
         this.analyser = this.context.createAnalyser();  // 录音分析节点
-        this.analyser.fftSize = 2048;                   // 表示存储频域的大小
+        this.analyser.fftSize = 256;                   // 表示存储频域的大小
 
         // 第一个参数表示收集采样的大小，采集完这么多后会触发 onaudioprocess 接口一次，该值一般为1024,2048,4096等，一般就设置为4096
         // 第二，三个参数分别是输入的声道数和输出的声道数，保持一致即可。
